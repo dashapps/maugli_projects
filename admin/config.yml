@@ -1,1 +1,22 @@
+backend:
+  name: github
+  repo: "dashapps/maugli_projects>"  
+  branch: "main"                                 
+  auth_scope: "repo"                             
 
+media_folder: "static/images/uploads"            
+public_folder: "/images/uploads"                 
+
+collections:
+  - name: "blog"
+    label: "Блог"
+    folder: "src/content/blog"                  
+    create: true
+    slug: "editing-{{fields.post_id}}"                            
+    fields:
+      - { label: "Post ID",     name: "post_id",    widget: "number", readonly: true }
+      - { label: "Cover title",     name: "title",      widget: "string", required: true }
+      - { label: "Telegram teaser",name: "tg_teaser",  widget: "text" }
+      - { label: "Blog post", name: "body",       widget: "markdown" }
+      - { label: "Rubric",       name: "rubric",     widget: "string", readonly: true }
+      - { label: "Product",       name: "rubric",     widget: "string", readonly: true }
